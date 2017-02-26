@@ -1,11 +1,51 @@
 {
-  "rules": {
-    "no-duplicate-variable": true,
-    "no-unused-variable": [
-      true
+    "rules": {
+        "curly": true,
+        "no-conditional-assignment": true,
+        "no-duplicate-variable": true,
+        "no-empty": true,
+        "no-eval": true,
+        "no-unsafe-finally": true,
+        "no-unused-expression": true,
+        "no-unused-new": true,
+        "no-var-keyword": true,
+        "triple-equals": true,
+        "indent": [true, "tabs"],
+        "linebreak-style": [true, "LF"],
+        "no-trailing-whitespace": true,
+        "prefer-const": true,
+        "trailing-comma": [true, {"multiline": "always", "singleline": "always"}],
+        "class-name": true,
+        "new-parens": true,
+        "object-literal-key-quotes": [true, "consistent-as-needed"],
+        "quotemark": [true, "single", "avoid-escape"],
+        "semicolon": [true, "always"],
+        "space-before-function-paren": [true, "always"],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+        "whitespace": [true, "check-branch", "check-decl", "check-module", "check-separator", "check-type", "check-operator", "check-typecast"],
+        "no-duplicate-variable": true,
+        "no-unused-variable": [
+            true
+        ],
+        "typedef-whitespace": [
+            true,
+            {
+                "call-signature": "nospace",
+                "index-signature": "nospace",
+                "parameter": "nospace",
+                "property-declaration": "nospace",
+                "variable-declaration": "nospace"
+            },
+            {
+                "call-signature": "onespace",
+                "index-signature": "onespace",
+                "parameter": "onespace",
+                "property-declaration": "onespace",
+                "variable-declaration": "onespace"
+            }
+        ]
+    },
+    "rulesDirectory": [
+        "node_modules/tslint-eslint-rules/dist/rules"
     ]
-  },
-  "rulesDirectory": [
-    "node_modules/tslint-eslint-rules/dist/rules"
-  ]
 }
