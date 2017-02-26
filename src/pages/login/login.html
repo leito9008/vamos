@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+    <form (submit)="login()">
+        <ion-item>
+            <ion-label floating>Número de teléfono</ion-label>
+            <ion-input type="text" [(ngModel)]="account.phone" name="phone" required></ion-input>
+        </ion-item>
+        <div padding>
+            <button ion-button color="primary" block>
+                Vamos!
+            </button>
+        </div>
+    </form>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>¿A dónde vamos?</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-fab top right edge>
+        <button color="secondary" ion-fab>
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+
+    <ion-card *ngFor="let event of events">
+
+        <img src="assets/img/example_map.png">
+
+        <ion-item>
+            <ion-icon name="pin" item-left large></ion-icon>
+            <h2>Antares Parador</h2>
+            <p>Calle 18 n 1495</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="time" item-left large></ion-icon>
+            <h2>Hoy a las 18:30</h2>
+            <p>Recordatorio 1hr antes</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="people" item-left large></ion-icon>
+            <h2>China, Cami, Joni y 5+</h2>
+            <p>confirmaron que van</p>
+        </ion-item>
+
+        <ion-row>
+            <ion-col>
+                <button color="secondary" ion-button large block icon-left item-right>
+                    <ion-icon name="beer"></ion-icon>
+                    <div class="">
+                        VAMOS!
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+
+</ion-content>
