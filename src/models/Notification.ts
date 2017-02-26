@@ -1,5 +1,4 @@
-import { Event } from './Event';
-import { Comment } from './Comment';
+import { Event, Comment } from './';
 
 export class Notification {
 

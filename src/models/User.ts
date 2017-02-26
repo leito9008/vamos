@@ -1,4 +1,4 @@
-import { Notification } from './Notification';
+import { Notification } from './';
 
 export class User {
 

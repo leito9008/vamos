@@ -1,7 +1,4 @@
-import { User } from './User';
-import { Comment } from './Comment';
-import { Invitation } from './Invitation';
-import { EventStatus } from './EventStatus';
+import { User, Comment, Invitation, EventStatus } from './';
 
 export class Event {
 
@@ -16,7 +13,7 @@ export class Event {
     public invitations: Invitation[];
     public comments: Comment[];
 
-    constructor(name: string, description: string, location: string, time: Date, owner: User, status: EventStatus) {
+    constructor(name: string, description: string, location: string, time: Date, owner: User, status: EventStatus = 'active') {
         this.name = name;
         this.description = description;
         this.location = location;
