@@ -10,19 +10,20 @@
 <ion-content>
 
     <ion-fab top right edge>
-        <button color="secondary" ion-fab>
+        <button color="danger" ion-fab>
             <ion-icon name="add"></ion-icon>
         </button>
     </ion-fab>
 
     <ion-card *ngFor="let event of events">
 
-        <img src="assets/img/example_map.png">
+        <!-- TODO feature: locate place by coordinates in a map -->
+        <!-- <img src="assets/img/example_map.png"> -->
 
         <ion-item>
             <ion-icon name="pin" item-left large></ion-icon>
-            <h2>Antares Parador</h2>
-            <p>Calle 18 n 1495</p>
+            <h2>{{ event.location.name }}</h2>
+            <p>{{ event.location.address }}</p>
         </ion-item>
 
         <ion-item>
