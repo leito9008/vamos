@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
+import { PersistenceManager } from '../providers';
 import { FirstPage, Page1Page, Page2Page } from '../pages';
 
 @Component({
@@ -31,12 +32,11 @@ export class VamosApp {
             // Here you can do any higher level native things you might need.
             StatusBar.styleDefault();
             Splashscreen.hide();
+            PersistenceManager.connect();
         });
     }
 
     openPage(page) {
-        // Reset the content nav to have just this page
-        // we wouldn't want the back button to show in this scenario
         this.nav.setRoot(page.component);
     }
 }

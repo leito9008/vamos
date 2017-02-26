@@ -1,5 +1,9 @@
+// TODO remove this 2 imports and replace by LoginProvider
+import * as firebase from 'firebase';
+import { PersistenceManager } from '../../providers';
+
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 
 import { MainPage } from '../';
 
@@ -9,20 +13,37 @@ import { MainPage } from '../';
 })
 export class LoginPage {
 
-    // TODO add country code
-    private account: { phone: string } = {
+    // TODO feature: add selectable country code
+    private account: { name: string, phone: string } = {
+        name: 'Leito',
         phone: '+542214180840'
     };
 
     constructor(
         public navCtrl: NavController,
-        public toastCtrl: ToastController
+        public menuCtrl: MenuController
     ) {
+        this.menuCtrl.swipeEnable(false);
     }
 
     login() {
-        // this.userProvider.login(this.account);
-        this.navCtrl.setRoot(MainPage);
-        // TODO save user in storage
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                console.log('## user', user);
+                const database = PersistenceManager.getDatabase();
+                database.ref('users/' + user.uid).set({
+                    name: this.account.name,
+                    phone: this.account.phone
+                });
+            } else {
+                console.log('## no user', user);
+            }
+        });
+
+        firebase.auth().signInAnonymously().catch((error) => {
+            console.log('## errors', error);
+        });
+
+        // this.navCtrl.setRoot(MainPage);
     }
 }
